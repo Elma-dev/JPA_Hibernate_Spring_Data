@@ -37,5 +37,7 @@ public class JpaHibernateSpringDataApplication implements CommandLineRunner {
         System.out.println(productById.get());
         //searcByKeyWord
         System.out.println(daoProduct.findByNameContains("3"));
+        //SearchWithYourOwnQuery
+        System.out.println(daoProduct.findWithPrice(Long.valueOf(1200),Long.valueOf(1500)));
     }
 }
