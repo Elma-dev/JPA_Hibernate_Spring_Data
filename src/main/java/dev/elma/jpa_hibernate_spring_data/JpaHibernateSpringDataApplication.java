@@ -7,6 +7,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.List;
+
 @SpringBootApplication
 public class JpaHibernateSpringDataApplication implements CommandLineRunner {
 
@@ -24,5 +26,10 @@ public class JpaHibernateSpringDataApplication implements CommandLineRunner {
         daoProduct.save(new Product(null,"p3",14,1400));
         daoProduct.save(new Product(null,"p4",15,1500));
         //get All products
+        List<Product> products=daoProduct.findAll();
+        products.forEach(p->{
+            System.out.println(p);
+            System.out.println("----------------------------");
+        });
     }
 }
