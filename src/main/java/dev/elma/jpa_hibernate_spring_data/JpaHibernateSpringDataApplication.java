@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
 public class JpaHibernateSpringDataApplication implements CommandLineRunner {
@@ -31,5 +32,8 @@ public class JpaHibernateSpringDataApplication implements CommandLineRunner {
             System.out.println(p);
             System.out.println("----------------------------");
         });
+        //searchByID
+        Optional<Product> productById = daoProduct.findById(Long.valueOf(2));
+        System.out.println(productById.get());
     }
 }
